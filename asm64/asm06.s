@@ -1,15 +1,15 @@
-.section .text
-.globl _start
+section .text
+global _start
 _start:
-    mov    $0x3b, %rax
-    mov    $0x0,  %rdx
-    movabs $0x0068732f6e69622f,%r8                    
-    push   %r8
-    mov    %rsp,  %rdi
-    push   %rdx
-    push   %rdi
-    mov    %rsp,  %rsi
+    mov    rax,  0x3b
+    mov    rdx,  0x0
+    mov    r8,   0x0068732f6e69622f                 
+    push   r8
+    mov    rdi,  rsp  
+    push   rdx
+    push   rdi
+    mov    rsi,  rsp  
     syscall
-    mov    $0x3c, %rax
-    mov    $0x0,  %rdi
-    syscall  
+    mov    rax,  0x3c
+    mov    rdi,  0x0
+    syscall
